@@ -1,1 +1,12 @@
-<p>data</p>
+<mat-form-field>
+    <mat-select placeholder="Customers" [(value)]="selected" (selectionChange)="hasChange = true">
+        <mat-option> None </mat-option>
+        <mat-option *ngFor="let customer of Customers; let i = index" [value]="i">
+            {{i}} {{customer.name}} {{customer.firstname}}
+        </mat-option>
+    </mat-select>
+</mat-form-field>
+
+<mat-card *ngIf="hasChange">
+    <div></div>
+</mat-card>
