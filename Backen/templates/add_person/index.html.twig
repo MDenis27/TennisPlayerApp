@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Add Person{% endblock %}
+
+{% block body %}
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+</style>
+
+    <div class="topnav">
+        <a href="/">Home</a>
+        <a class="active" href="addperson">Add Customer</a>
+        <a href="login" id="log">Login</a>
+    </div>
+
+    <div>
+        <div>
+            <div class="addperson-page">
+                <div class="addperson">
+                    {% if person.id != 0 %}
+                        <h2>Update information</h2>
+                        {{ form_start(personForm) }}
+                        {{ form_row(personForm._token) }}
+                        {{ form_row(personForm.name, {'value': person.name}) }}
+                        {{ form_row(personForm.firstname, {'value': person.firstname}) }}
+                        {{ form_row(personForm.phone, {'value': person.phone}) }}
+                        {{ form_row(personForm.mail, {'value': person.mail}) }}
+                        {{ form_row(personForm.note, {'value': person.note}) }}
+                        {{ form_row(personForm.submit, {'label': 'Update customer'}) }}
+                    {% else %}
+                        <h2>Add a customer</h2>
+                        {{ form(personForm) }}
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

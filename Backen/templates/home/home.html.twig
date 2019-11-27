@@ -1,0 +1,122 @@
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+</style>
+
+<div class="topnav">
+    <a class="active" href="/">Home</a>
+    <a href="addperson">Add Customer</a>
+    <a href="login" id="log">Login</a>
+</div>
+
+<div class="divTable">
+    <div class="divTableBody">
+        <div class="divTableRow">
+            <div class="divTableCell">
+                <form method="get" action="{{ path('home') }}">
+                    <h4>Choose a customer:</h4>
+                    <select name="customer" onchange="this.form.submit()">
+                        <option value="0">-- Select customer --</option>
+                        {% for person in people %}
+                            <option value="{{ person.id}}">{{ person.name}} {{ person.firstname }}</option>
+                        {% endfor %}
+                    </select>
+                </form>
+            </div>
+        </div>
+        <div class="divTableRow">
+            <div class="divTableCell">
+                {% if pers.id != 0 %}
+                    <div class="container">
+                        <div class="divTable">
+                            <div class="divTableBody">
+                                <div class="divTableRow">
+                                    <div class="divTableCell">
+                                        <img src="Picture/iconprofile.png" height="150" width="150">
+                                    </div>
+                                </div>
+                                <div class="divTableRow">
+                                    <div class="divTableCell">
+                                        <h1>{{ pers.name }} {{ pers.firstname }}</h1>
+                                        <h4>Phone: {{ pers.phone }}</h4>
+                                        {% if pers.mail != null %}
+                                            <h4>Mail: {{ pers.mail }}</h4>
+                                        {% endif %}
+                                        {% if pers.note != null %}
+                                            <h4>Note:</h4>
+                                            <p>{{ pers.note }}</p>
+                                        {% endif %}
+                                    </div>
+                                </div>
+                                <div class="divTableRow">
+                                    <div class="divTableCell">
+                                        <div class="divTable">
+                                            <div class="divTableBody">
+                                                <div class="divTableRow">
+                                                    <div class="divTableCell">
+                                                        <form method="get" action="{{ path('add_person') }}">
+                                                            <button id="btn" name="idpers" type="submit" value="{{ pers.id }} }">
+                                                                Update information
+                                                            </button>
+                                                        </form>
+                                                    </div>
+                                                    <div class="divTableCell">
+                                                        <form method="get" action="{{ path('add_racket') }}">
+                                                            <button id="btn" name="idpers" type="submit" value="{{ pers.id }} }">
+                                                                Add a racket
+                                                            </button>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                {% for racket in rackets %}
+                                <div class="divTableRow">
+                                    <div class="divTableCell">
+                                        <div class="divTable">
+                                            <div class="divTableBody">
+                                                <div class="divTableRow">
+                                                    <div id="racketdiv" class="divTableCell">
+                                                        <div class="divTable">
+                                                            <div class="divTableBody">
+                                                                <div class="divTableRow">
+                                                                    <div class="divTableCell">
+                                                                        <h2>{{ racket.brand }} {{ racket.model }}</h2>
+                                                                    </div>
+                                                                    <div class="divTableCell">
+                                                                        <form method="get" action="{{ path('add_string') }}">
+                                                                            <button id="btnrac" name="racket" type="submit" value="{{ racket.id }} }">
+                                                                                Add a string
+                                                                            </button>
+                                                                        </form>
+                                                                    </div>
+                                                                </div>
+                                                                {% for string in racket.idString %}
+                                                                    <div id="stringTable" class="divTableRow">
+                                                                        <div class="divTableCell">
+                                                                            <h4>{{ string.date.format('d-m-Y') }}</h4>
+                                                                        </div>
+                                                                        <div class="divTableCell">
+                                                                            <h6>{{ string.brand }} - {{ string.model }} - {{ string.gauge }}: {{ string.longTension }}/{{ string.crossTension }}</h6>
+                                                                        </div>
+                                                                    </div>
+                                                                {% endfor %}
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,349 @@
+/* Add a black background color to the top navigation */
+@import url(https://fonts.googleapis.com/css?family=Roboto:300);
+
+body {
+    background-color: #1f2f47;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/*---------------------------------------------------------------------------*/
+/* Navbar */
+.topnav {
+    background-color: #C0C0C0;
+    overflow: hidden;
+    border:5px #C0C0C0;
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+    float: left;
+    color: #1f2f47;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+    background-color: #1f2f47;
+    color: #C0C0C0;
+}
+
+/* Add a color to the active/current link */
+.topnav a.active {
+    background-color: #1f2f47;
+    color: #C0C0C0;
+}
+.topnav #log {
+    float: right;
+}
+
+.logo {
+    float:right;
+    background:#1f2f47;
+    width:25%;
+    height:100px;
+    padding: 10px 10px 10px 10px;
+}
+
+/*---------------------------------------------------------------------------*/
+/* Home Page */
+div.searchable {
+    width: 300px;
+    float: left;
+    margin-top: 10px;
+    margin-left: 15px;
+}
+
+.searchable input {
+    width: 100%;
+    height: 50px;
+    font-size: 18px;
+    padding: 10px;
+    -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: border-box; /* Firefox, other Gecko */
+    box-sizing: border-box; /* Opera/IE 8+ */
+    display: block;
+    font-weight: 400;
+    line-height: 1.6;
+    color: #495057;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+
+.searchable ul {
+    display: none;
+    list-style-type: none;
+    background-color: #fff;
+    border-radius: 0 0 5px 5px;
+    border: 1px solid #add8e6;
+    border-top: none;
+    max-height: 180px;
+    margin: 0;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    padding: 0;
+}
+
+.searchable ul li {
+    padding: 7px 9px;
+    border-bottom: 1px solid #e1e1e1;
+    cursor: pointer;
+    color: #6e6e6e;
+}
+
+.searchable ul li.selected {
+    background-color: #e8e8e8;
+    color: #333;
+}
+
+.homeSubmit {
+    box-shadow:inset 0 0 7px 0 #bbdaf7;
+    background: #79bbff linear-gradient(to bottom, #79bbff 5%, #378de5 100%);
+    border-radius:20px;
+    border:1px solid #84bbf3;
+    display:inline-block;
+    cursor:pointer;
+    color:#ffffff;
+    font-family: Arial, serif;
+    font-size:23px;
+    font-weight:bold;
+    padding:10px 56px;
+    text-decoration:none;
+    text-shadow:0 1px 0 #528ecc;
+    margin: 10px 10px 10px 10px;
+}
+.homeSubmit:hover {
+    background: #378de5 linear-gradient(to bottom, #378de5 5%, #79bbff 100%);
+}
+.homeSubmit:active {
+    position:relative;
+    top:1px;
+}
+
+.container {
+    width: 400px;
+    margin: 120px auto 120px;
+    background-color: lightgray;
+    padding: 0 20px 20px;
+    border-radius: 6px;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.075);
+    -webkit-box-shadow: 0 2px 5px rgba(0,0,0,0.075);
+    -moz-box-shadow: 0 2px 5px rgba(0,0,0,0.075);
+    text-align: center;
+}
+
+.infoCustomer {
+    float: left;
+    width: 100%;
+}
+
+#racketdiv {
+    background-color: lightslategray;
+    padding: 0 20px 20px;
+    border-radius: 6px;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.075);
+    -webkit-box-shadow: 0 2px 5px rgba(0,0,0,0.075);
+    -moz-box-shadow: 0 2px 5px rgba(0,0,0,0.075);
+    text-align: center;
+}
+
+h2 {
+    font-size: 32px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: #333;
+}
+h4 {
+    font-size: 13px;
+    color: #00baff;
+    letter-spacing: 1px;
+    margin-bottom: 25px
+}
+p {
+    font-size: 16px;
+    line-height: 26px;
+    margin-bottom: 20px;
+    color: #666;
+}
+
+.divTable{
+    display: table;
+    width: 100%;
+}
+.divTableRow {
+    display: table-row;
+}
+.divTableHeading {
+    background-color: #EEE;
+    display: table-header-group;
+}
+.divTableCell, .divTableHead {
+    /*border: 1px solid #999999;*/
+    display: table-cell;
+    padding: 3px 10px;
+}
+.divTableHeading {
+    background-color: #EEE;
+    display: table-header-group;
+    font-weight: bold;
+}
+.divTableFoot {
+    background-color: #EEE;
+    display: table-footer-group;
+    font-weight: bold;
+}
+.divTableBody {
+    display: table-row-group;
+}
+
+#btn {
+    border-radius: 5px;
+    background-color: #6e6e6e;
+    width: 300px;
+    height: 50px;
+    font-size: x-large;
+}
+
+#btnrac {
+    border-radius: 5px;
+    border: 1px solid #999999;
+    background-color: #6e6e6e;
+    width: 300px;
+    height: 50px;
+    font-size: x-large;
+    float: right;
+}
+
+#btn:hover {
+    background-color: lightslategray;
+}
+
+#btnrac:hover {
+    background-color: lightgray;
+}
+
+#stringTable {
+    border: 1px solid #999999;
+    border-radius: 5px;
+    background-color: lightgray;
+}
+
+/*---------------------------------------------------------------------------*/
+/* Register Page */
+.addperson {
+    position: relative;
+    text-align: left;
+    background: #FFFFFF;
+    max-width: 600px;
+    margin: 15px auto 0;
+    padding: 45px;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+.addperson-page {
+    width: auto;
+    padding: 1% 1% 0;
+}
+/*---------------------------------------------------------------------------*/
+/* Login Page */
+.login-form{
+    /*width: 360px;*/
+}
+.error{
+    color: red;
+}
+.login-page {
+    width: 360px;
+    padding: 8% 0 0;
+    margin: auto;
+}
+.form {
+    position: relative;
+    z-index: 1;
+    background: #FFFFFF;
+    max-width: 360px;
+    margin: 0 auto 100px;
+    padding: 45px;
+    text-align: center;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+.form input {
+    font-family: "Roboto", sans-serif;
+    outline: 0;
+    background: #f2f2f2;
+    width: 100%;
+    border: 0;
+    margin: 0 0 15px;
+    padding: 15px;
+    box-sizing: border-box;
+    font-size: 20px;
+}
+.submit {
+    font-family: "Roboto", sans-serif;
+    text-transform: uppercase;
+    outline: 0;
+    background: #4CAF50;
+    width: 100%;
+    border: 0;
+    padding: 15px;
+    color: #FFFFFF;
+    font-size: 14px;
+    cursor: pointer;
+}
+.form .submit:hover,.form .submit:active,.form .submit:focus {
+    background: #43A047;
+}
+.form .message {
+    margin: 15px 0 0;
+    color: #b3b3b3;
+    font-size: 15px;
+}
+.form .message a {
+    color: #4CAF50;
+    text-decoration: none;
+}
+.container {
+    position: relative;
+    z-index: 1;
+    max-width: 300px;
+    margin: 0 auto;
+}
+.container:before, .container:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+.container .info {
+    margin: 50px auto;
+    text-align: center;
+}
+.container .info h1 {
+    margin: 0 0 15px;
+    padding: 0;
+    font-size: 36px;
+    font-weight: 300;
+    color: #1a1a1a;
+}
+.container .info span {
+    color: #4d4d4d;
+    font-size: 12px;
+}
+.container .info span a {
+    color: #000000;
+    text-decoration: none;
+}
+.container .info span .fa {
+    color: #EF3B3A;
+}
+.form-group{
+    margin-left: 14.3%;
+}
+

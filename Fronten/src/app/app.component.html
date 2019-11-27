@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+</head>
+
+<nav>
+  <mat-toolbar color="primary" role="heading">
+    <div>
+      <a mat-button routerLink=".">
+        <mat-icon>
+          home
+        </mat-icon>
+        <span> Home </span>
+      </a>
+      <a mat-button routerLink="/addperson">
+        <mat-icon>
+          person_add
+        </mat-icon>
+        <span> Add Person </span>
+      </a>
+
+      <!-- This fills the remaining space of the current row -->
+      <span class="example-fill-remaining-space"></span>
+    </div>
+  </mat-toolbar>
+</nav>
+
+<body>
+<router-outlet></router-outlet>
+</body>
+
+</html>

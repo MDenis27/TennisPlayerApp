@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Tennis Player{% endblock %}
+
+{% block body %}
+
+    {{ include('home/home.html.twig') }}
+
+    <div class="container">
+        <div class="avatar-flip">
+            <img src="Picture/iconprofile.png" height="150" width="150">
+        </div>
+        <h1>{{ pers.name }} {{ pers.firstname }}</h1>
+
+        <div class="infoCustomer">
+            <h4>Phone: {{ pers.phone }}</h4>
+            {% if pers.mail == null %}
+                <h4>Mail: none</h4>
+            {% else  %}
+                <h4>Mail: {{ pers.mail }}</h4>
+            {% endif %}
+        </div>
+
+        {% for racket in rackets %}
+            <div id="racketdiv">
+                <h2>{{ racket.brand }} {{ racket.model }}</h2>
+            </div>
+        {% endfor %}
+    </div>
+
+
+{% endblock %}
