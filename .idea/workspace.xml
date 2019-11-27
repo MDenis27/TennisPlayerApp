@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="309e1b78-62a4-4845-b050-57e2bc4dda32" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/Backend/src/Controller/API/APIAddPersonController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/Controller/APIAddPersonController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/src/Controller/API/APIAddRacketController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/Controller/APIAddRacketController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/src/Controller/API/APIAddStringController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/Controller/APIAddStringController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/src/Controller/API/APIHomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/Controller/APIHomeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/src/Controller/API/APILoginController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/Controller/APILoginController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/src/app/app-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/src/app/app-routing.module.ts" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/Frontend" />
+  </component>
+  <component name="ProjectId" id="1UBwedo8oNJmVkosdl1SoNlKbXD" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_package_manager_path" value="npm" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="npm.Angular CLI Server">
+    <configuration name="E2E Tests (AppTennisPlayer)" type="JavaScriptTestRunnerProtractor">
+      <config-file value="$PROJECT_DIR$/Frontend/e2e/protractor.conf.js" />
+      <node-interpreter value="project" />
+      <protractor-options value="" />
+      <envs />
+      <scope-kind value="ALL" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Angular Application" type="JavascriptDebugType" uri="http://localhost:4200">
+      <method v="2" />
+    </configuration>
+    <configuration name="Angular CLI Server" type="js.build_tools.npm">
+      <package-json value="$PROJECT_DIR$/Frontend/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="start" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="309e1b78-62a4-4845-b050-57e2bc4dda32" name="Default Changelist" comment="" />
+      <created>1574843392083</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1574843392083</updated>
+      <workItem from="1574843393302" duration="285000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
