@@ -9,6 +9,8 @@ import { PersonComponent } from './person/person.component';
 import { AddpersonComponent } from './addperson/addperson.component';
 import {MatButtonModule, MatToolbarModule} from '@angular/material';
 import {MatIconModule} from '@angular/material';
+import {PersonService} from './person.service';
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -19,13 +21,16 @@ import {MatIconModule} from '@angular/material';
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MatToolbarModule,
     MatButtonModule,
     MatIconModule
   ],
-  providers: [],
+  providers: [
+      PersonService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

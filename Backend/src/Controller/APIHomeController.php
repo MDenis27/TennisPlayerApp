@@ -16,7 +16,8 @@ use Symfony\Component\Serializer\Serializer;
 class APIHomeController extends AbstractController
 {
     /**
-     * @Route("/api", name="homeapi", methods="GET")
+     * @Route("/api", name="homeapi", methods={"GET"})
+     * @return JsonResponse
      */
     public function index()
     {
@@ -33,7 +34,8 @@ class APIHomeController extends AbstractController
         $em = $this->getDoctrine()->getManager();
         $people = $em->getRepository('App:Person')->findAll();
         $jsonContent = $serializer->serialize($people,'json');
-        $response = new JsonResponse(); $response->setContent($jsonContent);
+        $response = new JsonResponse();
+        $response->setContent($jsonContent);
         return $response;
     }
 
