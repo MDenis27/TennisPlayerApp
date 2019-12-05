@@ -1,3 +1,5 @@
+import DateTimeFormat = Intl.DateTimeFormat;
+
 export interface Customer {
   id: number;
   name: string;
@@ -24,7 +26,7 @@ export interface TennisString {
   gauge: number;
   longTension: number;
   crossTension: number;
-  date: string;
+  date: Date;
 }
 
 

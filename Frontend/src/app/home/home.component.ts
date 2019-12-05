@@ -1,6 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import {
+  AfterContentChecked,
+  AfterViewInit,
+  Component,
+  OnInit,
+  ViewChild
+} from '@angular/core';
 import {PersonService} from '../person.service';
 import {Customer, Racket, TennisString} from '../interface/interface.component';
+import {MatSelect} from "@angular/material/select";
 
 @Component({
   selector: 'app-home',
@@ -8,7 +15,7 @@ import {Customer, Racket, TennisString} from '../interface/interface.component';
   styleUrls: ['./home.component.css']
 })
 
-export class HomeComponent implements OnInit {
+export class HomeComponent implements OnInit,AfterViewInit {
 
   public data: JSON[] = [];
   Customers: Customer[] = [];
@@ -16,6 +23,9 @@ export class HomeComponent implements OnInit {
   private Strings: TennisString[] = [];
   selected: 'None';
   hasChange: boolean = false;
+  customer: Customer;
+
+  @ViewChild('Select',{static:false}) select : MatSelect;
 
   constructor(private api: PersonService) { }
 
@@ -27,7 +37,7 @@ export class HomeComponent implements OnInit {
         let tempData = this.data[j];
         for (let i = 0; i < tempData["idRacket"].length; i++) {
           let tempRacket = tempData["idRacket"][i];
-          for (let l = 0; i < tempRacket["idString"].length; l++) {
+          for (let l = 0; l < tempRacket["idString"].length; l++) {
             let tempString = tempRacket["idString"][l];
             this.Strings.push({
               id: tempString["id"],
@@ -63,6 +73,10 @@ export class HomeComponent implements OnInit {
     });
   }
 
-
-
+  ngAfterViewInit(): void {
+    this.select.valueChange.subscribe(data=>{
+      this.hasChange = true;
+      this.customer = this.Customers[data-1];
+    })
+  }
 }

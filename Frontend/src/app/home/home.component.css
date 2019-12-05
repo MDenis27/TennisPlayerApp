@@ -1,0 +1,46 @@
+.select{
+    margin-top: 1%;
+    margin-left: 1%;
+}
+
+.main-div{
+    justify-content: center;
+    align-items: center;
+    padding-left: 15%;
+    padding-top: 2%;
+}
+
+.subtitleWhite{
+    color: white;
+}
+
+.customerCard {
+    max-width: 80%;
+    background-color: #3F51B5;
+    color: white;
+}
+
+.racketCard {
+    max-width: 100%;
+}
+
+.stringCard {
+    max-width: 100%;
+    background-color: #3F51B5;
+    color: white;
+}
+
+.customerCardImage {
+    background-image: url('https://icon-library.net/images/icon-profile/icon-profile-0.jpg');
+    background-size: cover;
+}
+
+.racketCardImage {
+    background-image: url('http://simpleicon.com/wp-content/uploads/tennis.png');
+    background-size: cover;
+}
+
+.stringCardImage {
+    background-image: url('https://image.flaticon.com/icons/svg/182/182062.svg');
+    background-size: cover;
+}
