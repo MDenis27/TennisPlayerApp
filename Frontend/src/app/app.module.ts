@@ -17,6 +17,7 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {MatCardModule} from "@angular/material/card";
 import {MatDialogModule} from '@angular/material/dialog';
 import {DialogOverviewExampleDialog} from './home/home.component';
+import {MatInputModule} from "@angular/material/input";
 
 @NgModule({
   declarations: [
@@ -43,6 +44,7 @@ import {DialogOverviewExampleDialog} from './home/home.component';
         MatCardModule,
         MatDialogModule,
         FormsModule,
+        MatInputModule,
     ],
   providers: [
       PersonService

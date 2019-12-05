@@ -10,6 +10,7 @@ import {PersonService} from '../person.service';
 import {Customer, Racket, TennisString} from '../interface/interface.component';
 import {MatSelect} from "@angular/material/select";
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
+import {NgForm} from "@angular/forms";
 
 export interface DialogData {
   animal: string;
@@ -106,6 +107,7 @@ export class HomeComponent implements OnInit,AfterViewInit {
 @Component({
   selector: 'app-home-dialog',
   templateUrl: 'home.component.dialog.html',
+  styleUrls: ['./home.component.css']
 })
 export class DialogOverviewExampleDialog {
 
@@ -117,4 +119,15 @@ export class DialogOverviewExampleDialog {
     this.dialogRef.close();
   }
 
+  onSaveString(form: NgForm) {
+      const string : TennisString = {
+        id: 0,
+        brand: form.value.brand,
+        model: form.value.model,
+        gauge: form.value.gauge,
+        longTension: form.value.longTension,
+        crossTension: form.value.crossTension,
+        date: new Date(Date.now())
+      }
+  }
 }

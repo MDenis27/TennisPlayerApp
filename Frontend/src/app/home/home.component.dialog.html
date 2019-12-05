@@ -1,13 +1,41 @@
 <!DOCTYPE html>
-<h1 mat-dialog-title>Hi {{datat.name}}</h1>
 <div mat-dialog-content>
-    <p>What's your favorite animal?</p>
-    <mat-form-field>
-        <input matInput [(ngModel)]="datat.animal">
-    </mat-form-field>
-</div>
-<div mat-dialog-actions>
-    <button mat-button (click)="onNoClick()">No Thanks</button>
-    <button mat-button [mat-dialog-close]="datat.animal" cdkFocusInitial>Ok
-    </button>
+    <h2>Adding a new string!</h2>
+    <form (submit)="onSaveString(saveStringForm)"
+          #saveStringForm="ngForm">
+        <mat-form-field>
+            <input matInput name="brand" ngModel placeholder="Brand"
+                   #brandInput="ngModel" required>
+            <mat-error *ngIf="brandInput.invalid">please enter brand</mat-error>
+        </mat-form-field>
+
+        <mat-form-field>
+            <input matInput name="model" ngModel placeholder="Model"
+                   #modelInput="ngModel" required>
+            <mat-error *ngIf="modelInput.invalid">please enter model</mat-error>
+        </mat-form-field>
+
+        <mat-form-field>
+            <input matInput name="gauge" ngModel placeholder="Gauge"
+                   #gaugeInput="ngModel" required>
+            <mat-error *ngIf="gaugeInput.invalid">please enter Gauge</mat-error>
+        </mat-form-field>
+
+        <mat-form-field>
+            <input matInput name="longTension" ngModel
+                   placeholder="Long tension"
+                   #lTensionInput="ngModel" required>
+            <mat-error *ngIf="lTensionInput.invalid">please enter
+                tension</mat-error>
+        </mat-form-field>
+
+        <mat-form-field>
+            <input matInput name="crossTension" ngModel
+                   placeholder="cross Tension"
+                   #cTensionInput="ngModel">
+        </mat-form-field>
+
+    <button mat-button (click)="onNoClick()">Cancel</button>
+    <button mat-raised-button color="primary" type="submit">Save</button>
+    </form>
 </div>

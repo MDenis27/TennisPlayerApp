@@ -3,6 +3,10 @@
     margin-left: 1%;
 }
 
+mat-dialog-content {
+    width: 80%;
+}
+
 .main-div{
     justify-content: center;
     align-items: center;
