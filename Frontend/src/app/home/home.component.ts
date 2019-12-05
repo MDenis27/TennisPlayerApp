@@ -3,11 +3,18 @@ import {
   AfterViewInit,
   Component,
   OnInit,
-  ViewChild
+  ViewChild,
+  Inject
 } from '@angular/core';
 import {PersonService} from '../person.service';
 import {Customer, Racket, TennisString} from '../interface/interface.component';
 import {MatSelect} from "@angular/material/select";
+import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
+
+export interface DialogData {
+  animal: string;
+  name: string;
+}
 
 @Component({
   selector: 'app-home',
@@ -24,10 +31,13 @@ export class HomeComponent implements OnInit,AfterViewInit {
   selected: 'None';
   hasChange: boolean = false;
   customer: Customer;
+  animal: string;
+  name: string;
 
   @ViewChild('Select',{static:false}) select : MatSelect;
 
-  constructor(private api: PersonService) { }
+  constructor(private api: PersonService,
+              public dialog: MatDialog) { }
 
   ngOnInit() {
     this.api.getHomeJson().subscribe(urldata => {
@@ -79,4 +89,32 @@ export class HomeComponent implements OnInit,AfterViewInit {
       this.customer = this.Customers[data-1];
     })
   }
+
+  openDialog(): void {
+    const dialogRef = this.dialog.open(DialogOverviewExampleDialog, {
+      width: '250px',
+      data: {name: this.name, animal: this.animal}
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+      this.animal = result;
+    });
+  }
+}
+
+@Component({
+  selector: 'app-home-dialog',
+  templateUrl: 'home.component.dialog.html',
+})
+export class DialogOverviewExampleDialog {
+
+  constructor(
+      public dialogRef: MatDialogRef<DialogOverviewExampleDialog>,
+      @Inject(MAT_DIALOG_DATA) public datat: DialogData) {}
+
+  onNoClick(): void {
+    this.dialogRef.close();
+  }
+
 }

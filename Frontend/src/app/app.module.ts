@@ -13,16 +13,20 @@ import {PersonService} from './person.service';
 import {HttpClientModule} from '@angular/common/http';
 import { MatFormFieldModule, MatSelectModule } from '@angular/material';
 import { NgxMatSelectSearchModule } from 'ngx-mat-select-search';
-import {ReactiveFormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {MatCardModule} from "@angular/material/card";
+import {MatDialogModule} from '@angular/material/dialog';
+import {DialogOverviewExampleDialog} from './home/home.component';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    HomeComponent,
-    PersonComponent,
-    AddpersonComponent,
+        AppComponent,
+        HomeComponent,
+        PersonComponent,
+        AddpersonComponent,
+        DialogOverviewExampleDialog
   ],
+    entryComponents: [DialogOverviewExampleDialog],
     imports: [
         BrowserModule,
         HttpClientModule,
@@ -36,7 +40,9 @@ import {MatCardModule} from "@angular/material/card";
         MatSelectModule,
         MatFormFieldModule,
         NgxMatSelectSearchModule,
-        MatCardModule
+        MatCardModule,
+        MatDialogModule,
+        FormsModule,
     ],
   providers: [
       PersonService
