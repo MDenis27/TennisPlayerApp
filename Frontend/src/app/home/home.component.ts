@@ -12,10 +12,6 @@ import {MatSelect} from "@angular/material/select";
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
 import {NgForm} from "@angular/forms";
 
-export interface DialogData {
-  animal: string;
-  name: string;
-}
 
 @Component({
   selector: 'app-home',
@@ -32,8 +28,6 @@ export class HomeComponent implements OnInit,AfterViewInit {
   selected: 'None';
   hasChange: boolean = false;
   customer: Customer;
-  animal: string;
-  name: string;
 
   @ViewChild('Select',{static:false}) select : MatSelect;
 
@@ -93,13 +87,25 @@ export class HomeComponent implements OnInit,AfterViewInit {
 
   openDialog(): void {
     const dialogRef = this.dialog.open(DialogOverviewExampleDialog, {
-      width: '250px',
-      data: {name: this.name, animal: this.animal}
+      width: '60%',
+      data: {customer: this.customer}
     });
 
     dialogRef.afterClosed().subscribe(result => {
       console.log('The dialog was closed');
-      this.animal = result;
+      this.customer = result;
+    });
+  }
+
+  openDialogRacket(): void {
+    const dialogRef = this.dialog.open(HomeDialogRacket, {
+      width: '60%',
+      data: {customer: this.customer}
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+      this.customer = result;
     });
   }
 }
@@ -113,7 +119,7 @@ export class DialogOverviewExampleDialog {
 
   constructor(
       public dialogRef: MatDialogRef<DialogOverviewExampleDialog>,
-      @Inject(MAT_DIALOG_DATA) public datat: DialogData) {}
+      @Inject(MAT_DIALOG_DATA) public datat: Customer) {}
 
   onNoClick(): void {
     this.dialogRef.close();
@@ -129,5 +135,32 @@ export class DialogOverviewExampleDialog {
         crossTension: form.value.crossTension,
         date: new Date(Date.now())
       }
+  }
+}
+
+@Component({
+  selector: 'app-home-dialogRacket',
+  templateUrl: 'home.component.dialogRacket.html',
+  styleUrls: ['./home.component.css']
+})
+export class HomeDialogRacket {
+
+  constructor(
+      public dialogRef: MatDialogRef<HomeDialogRacket>,
+      @Inject(MAT_DIALOG_DATA) public datat: Customer) {}
+
+  onNoClick(): void {
+    this.dialogRef.close();
+  }
+
+  onSaveRacket(form: NgForm) {
+    const racket : Racket = {
+      id: 0,
+      brand: form.value.brand,
+      model: form.value.model,
+      stringed: true,
+      idPerson: this.datat.id,
+      idString: []
+    }
   }
 }

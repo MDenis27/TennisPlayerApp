@@ -8,18 +8,21 @@
                    #brandInput="ngModel" required>
             <mat-error *ngIf="brandInput.invalid">please enter brand</mat-error>
         </mat-form-field>
+        <br/>
 
         <mat-form-field>
             <input matInput name="model" ngModel placeholder="Model"
                    #modelInput="ngModel" required>
             <mat-error *ngIf="modelInput.invalid">please enter model</mat-error>
         </mat-form-field>
+        <br/>
 
         <mat-form-field>
             <input matInput name="gauge" ngModel placeholder="Gauge"
                    #gaugeInput="ngModel" required>
             <mat-error *ngIf="gaugeInput.invalid">please enter Gauge</mat-error>
         </mat-form-field>
+        <br/>
 
         <mat-form-field>
             <input matInput name="longTension" ngModel
@@ -28,12 +31,14 @@
             <mat-error *ngIf="lTensionInput.invalid">please enter
                 tension</mat-error>
         </mat-form-field>
+        <br/>
 
         <mat-form-field>
             <input matInput name="crossTension" ngModel
                    placeholder="cross Tension"
                    #cTensionInput="ngModel">
         </mat-form-field>
+        <br/>
 
     <button mat-button (click)="onNoClick()">Cancel</button>
     <button mat-raised-button color="primary" type="submit">Save</button>

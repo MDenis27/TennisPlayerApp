@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HomeComponent } from './home/home.component';
+import {HomeComponent, HomeDialogRacket} from './home/home.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { PersonComponent } from './person/person.component';
 import { AddpersonComponent } from './addperson/addperson.component';
@@ -25,9 +25,13 @@ import {MatInputModule} from "@angular/material/input";
         HomeComponent,
         PersonComponent,
         AddpersonComponent,
-        DialogOverviewExampleDialog
+        DialogOverviewExampleDialog,
+        HomeDialogRacket
   ],
-    entryComponents: [DialogOverviewExampleDialog],
+    entryComponents: [
+        DialogOverviewExampleDialog,
+        HomeDialogRacket
+    ],
     imports: [
         BrowserModule,
         HttpClientModule,
