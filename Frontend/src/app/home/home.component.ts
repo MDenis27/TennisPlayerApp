@@ -121,7 +121,8 @@ export class DialogOverviewExampleDialog {
 
   constructor(
       public dialogRef: MatDialogRef<DialogOverviewExampleDialog>,
-      @Inject(MAT_DIALOG_DATA) public datat: Customer) {}
+      @Inject(MAT_DIALOG_DATA) public custom: Customer,
+      @Inject(MAT_DIALOG_DATA) public racket: Racket) {}
 
   onNoClick(): void {
     this.dialogRef.close();
@@ -135,7 +136,9 @@ export class DialogOverviewExampleDialog {
         gauge: form.value.gauge,
         longTension: form.value.longTension,
         crossTension: form.value.crossTension,
-        date: new Date(Date.now())
+        date: new Date(Date.now()),
+        idRacket: null,
+        idPerson: this.custom.id
       }
   }
 }
@@ -149,7 +152,7 @@ export class HomeDialogRacket {
 
   constructor(
       public dialogRef: MatDialogRef<HomeDialogRacket>,
-      @Inject(MAT_DIALOG_DATA) public datat: Customer) {}
+      @Inject(MAT_DIALOG_DATA) public custom: Customer) {}
 
   onNoClick(): void {
     this.dialogRef.close();
@@ -161,7 +164,7 @@ export class HomeDialogRacket {
       brand: form.value.brand,
       model: form.value.model,
       stringed: true,
-      idPerson: this.datat.id,
+      idPerson: this.custom.id,
       idString: []
     }
   }
