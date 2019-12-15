@@ -27,6 +27,8 @@ export interface TennisString {
   longTension: number;
   crossTension: number;
   date: Date;
+  idRacket: number;
+  idPerson: number;
 }
 
 

@@ -52,6 +52,8 @@ export class HomeComponent implements OnInit,AfterViewInit {
               longTension: tempString["longTension"],
               crossTension: tempString["crossTension"],
               date: tempString["date"],
+              idRacket: tempRacket["id"],
+              idPerson: tempData["id"]
             })
           }
           this.Rackets.push({

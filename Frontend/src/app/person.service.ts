@@ -3,6 +3,7 @@ import {HttpClient, HttpErrorResponse, HttpHeaders, HttpParams} from '@angular/c
 import {Router} from '@angular/router';
 import {catchError} from 'rxjs/operators';
 import {Observable, Subject, throwError} from 'rxjs';
+import {TennisString} from "./interface/interface.component";
 
 @Injectable({
   providedIn: 'root'
@@ -14,6 +15,11 @@ export class PersonService {
   getHomeJson() {
     return this.http.get('http://127.0.0.1:8000/api').pipe(
         catchError(this.handelError));
+  }
+
+  createNewString(newString : TennisString){
+    let url = "https://127.0.0.1:8000/api/addstring";
+    return this.http.post(url,newString).pipe(catchError(this.handelError));
   }
 
   handelError(err) {
