@@ -38,6 +38,8 @@ export class HomeComponent implements OnInit,AfterViewInit {
               public dialog: MatDialog) { }
 
   ngOnInit() {
+    this.selected = 'None';
+    this.Customers = [];
     this.api.getHomeJson().subscribe(urldata => {
       this.data = JSON.parse(JSON.stringify(urldata));
 
@@ -109,6 +111,7 @@ export class HomeComponent implements OnInit,AfterViewInit {
 
     dialogRef.afterClosed().subscribe(result => {
       console.log('The dialog was closed');
+      this.ngOnInit();
     });
   }
 }
@@ -146,15 +149,11 @@ export class DialogOverviewExampleDialog {
 
     this.api.createNewString(string).subscribe(urldata=>{
       if(urldata['result']){
-        this.router.navigate(['api/addstring']).then(r => console.log(r))
+        this.dialogRef.close();
       }
     },error =>{
       this.error = error
     } );
-
-    this.dialogRef.close()
-
-
   }
 }
 
@@ -165,8 +164,12 @@ export class DialogOverviewExampleDialog {
 })
 export class HomeDialogRacket {
 
+  public error: any;
+
   constructor(
       public dialogRef: MatDialogRef<HomeDialogRacket>,
+      private api: PersonService,
+      private router : Router,
       @Inject(MAT_DIALOG_DATA) public custom: Customer) {}
 
   onNoClick(): void {
@@ -181,6 +184,14 @@ export class HomeDialogRacket {
       stringed: true,
       idPerson: this.custom.id,
       idString: []
-    }
+    };
+
+    this.api.createNewRacket(racket).subscribe(urldata=>{
+      if(urldata['result']){
+        this.dialogRef.close();
+      }
+    },error =>{
+      this.error = error
+    } );
   }
 }

@@ -3,17 +3,18 @@
   <component name="ChangeListManager">
     <list default="true" id="309e1b78-62a4-4845-b050-57e2bc4dda32" name="Default Changelist" comment="Commit">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/src/Controller/APIAddRacketController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/Controller/APIAddRacketController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Backend/src/Controller/APIAddStringController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/Controller/APIAddStringController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/src/Controller/AddStringController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/Controller/AddStringController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/var/cache/dev/pools/8YnY4n60DP/7/R/zfbkBhQuf9ViWkz7di8Q" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/var/cache/dev/pools/8YnY4n60DP/7/R/zfbkBhQuf9ViWkz7di8Q" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/var/cache/dev/pools/8YnY4n60DP/7/W/35ZPSkX6mNBXYJT4fSHQ" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/var/cache/dev/pools/8YnY4n60DP/7/W/35ZPSkX6mNBXYJT4fSHQ" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Backend/var/cache/dev/pools/8YnY4n60DP/H/4/oENEWz6bgXFPpgzsgaTA" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/var/cache/dev/pools/8YnY4n60DP/H/4/oENEWz6bgXFPpgzsgaTA" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Backend/var/cache/dev/pools/8YnY4n60DP/L/U/Ji2wOmjjYGjnd07bvE+Q" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/var/cache/dev/pools/8YnY4n60DP/L/U/Ji2wOmjjYGjnd07bvE+Q" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/var/cache/dev/pools/8YnY4n60DP/W/U/Z5Wdqyuf5qE9kgDiDgDg" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/var/cache/dev/pools/8YnY4n60DP/W/U/Z5Wdqyuf5qE9kgDiDgDg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/var/cache/dev/pools/8YnY4n60DP/U/H/U4Iq4H7KIbd1xoE3+ZtQ" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/var/cache/dev/pools/8YnY4n60DP/U/H/U4Iq4H7KIbd1xoE3+ZtQ" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Backend/var/cache/dev/profiler/index.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/var/cache/dev/profiler/index.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/var/cache/dev/srcApp_KernelDevDebugContainer.php" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/var/cache/dev/srcApp_KernelDevDebugContainer.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/var/cache/dev/srcApp_KernelDevDebugContainer.php.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/var/cache/dev/srcApp_KernelDevDebugContainer.php.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/var/cache/dev/srcApp_KernelDevDebugContainer.xml.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/var/cache/dev/srcApp_KernelDevDebugContainer.xml.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Backend/var/log/dev.log" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/var/log/dev.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/src/app/home/home.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/src/app/home/home.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Frontend/src/app/home/home.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/src/app/home/home.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/src/app/interface/interface.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/src/app/interface/interface.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Frontend/src/app/person.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/src/app/person.service.ts" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -238,7 +239,7 @@
       <workItem from="1575713333665" duration="2254000" />
       <workItem from="1575727073093" duration="11000" />
       <workItem from="1576401809324" duration="2317000" />
-      <workItem from="1576480052089" duration="10025000" />
+      <workItem from="1576480052089" duration="15347000" />
     </task>
     <task id="LOCAL-00001" summary="Commit">
       <created>1574844215213</created>

@@ -50,9 +50,7 @@ class APIAddStringController extends AbstractController
                 throw new Exception("This string already exist");
             }
             $em->persist($string);
-            echo("persist");
             $em->flush();
-            echo("flush");
             return new JsonResponse(['result' => true,'session' => $string], 200);
         }
         catch(Exception $e)

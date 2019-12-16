@@ -6,60 +6,62 @@ use App\Entity\Person;
 use App\Entity\Racket;
 use App\Form\PersonType;
 use App\Form\RacketType;
-use App\Form\RegistrationFormType;
 use Doctrine\Common\Collections\ArrayCollection;
+use Exception;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\RedirectResponse;
+use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
-use Symfony\Component\Security\Core\Authentication\Token\UsernamePasswordToken;
-use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 
 class APIAddRacketController extends AbstractController
 {
     /**
-     * @Route("/api/addracket", name="add_racketapi")
+     * @Route("/api/addracket", name="add_racketapi", method={"POST"})
      * @param Request $request
      * @return RedirectResponse|Response
      */
     public function new(Request $request)
     {
         $racket = new Racket();
-        $form = $this->createForm(RacketType::class, $racket);
-
-        $form->handleRequest($request);
-
         $person = new Person();
+
+        $data = json_decode($request->getContent(), true);
+
         $em = $this->getDoctrine()->getManager();
-        if (isset($_GET['idpers'])){
-            $idPerson = $_GET['idpers'];
+
+        if (isset($data["idPerson"])){
+            $idPerson = $data["idPerson"];
             $person = $em->getRepository('App:Person')->find($idPerson);
         }
 
-        if ($form->isSubmitted() && $form->isValid()) {
-            // $form->getData() holds the submitted values
-            // but, the original `$task` variable has also been updated
-            $racket = $form->getData();
-            $racket->setIdPerson($person);
+        $racket->setBrand($data["brand"]);
+        $racket->setModel($data["model"]);
+        $racket->setStringed($data["stringed"]);
+        $racket->setIdPerson($person);
 
-            // ... perform some action, such as saving the task to the database
-            // for example, if Task is a Doctrine entity, save it!
-            try {
-                $em = $this->getDoctrine()->getManager();
-                $em->persist($racket);
-                $em->flush();
-                $this->addFlash('notice', 'La categorie bien enregistrée.');
-            } catch (Exception $e) {
-                $this->addFlash('notice', 'La categorie n\'est pas enregistrée.');
+        try
+        {
+            if($this->checkIfExist($racket)){
+                throw new Exception("This racket already exist");
             }
-            return $this->redirectToRoute('home');
+            $em->persist($racket);
+            $em->flush();
+            return new JsonResponse(['result' => true,'session' => $racket], 200);
+        }
+        catch(Exception $e)
+        {
+            $error = $e->getMessage();
         }
 
-        return $this->render('add_racket/index.html.twig', [
-            'racket' => $form->createView(),
-            'person' => $person,
-            ]);
+        return new JsonResponse(['error' => $error], 400);
 
+
+    }
+
+    private function checkIfExist(Racket $racket)
+    {
+        return false;
     }
 }
