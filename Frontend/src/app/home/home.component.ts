@@ -35,6 +35,7 @@ export class HomeComponent implements OnInit,AfterViewInit {
   @ViewChild('Select',{static:false}) select : MatSelect;
 
   constructor(private api: PersonService,
+              private router : Router,
               public dialog: MatDialog) { }
 
   ngOnInit() {
@@ -128,7 +129,6 @@ export class DialogOverviewExampleDialog {
   constructor(
       public dialogRef: MatDialogRef<DialogOverviewExampleDialog>,
       private api: PersonService,
-      private router : Router,
       @Inject(MAT_DIALOG_DATA) public idracket: number) {}
 
   onNoClick(): void {
@@ -169,7 +169,6 @@ export class HomeDialogRacket {
   constructor(
       public dialogRef: MatDialogRef<HomeDialogRacket>,
       private api: PersonService,
-      private router : Router,
       @Inject(MAT_DIALOG_DATA) public idCustomer: number) {}
 
   onNoClick(): void {
