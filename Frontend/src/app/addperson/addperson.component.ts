@@ -16,8 +16,7 @@ export class AddpersonComponent implements OnInit {
   public error: any;
 
   constructor(private api: PersonService,
-              private router : Router,
-              public dialog: MatDialog) { }
+              private router : Router) { }
 
   ngOnInit() {
   }
@@ -43,6 +42,6 @@ export class AddpersonComponent implements OnInit {
   }
 
   onNoClick() {
-
+    this.router.navigate(['home'])
   }
 }
