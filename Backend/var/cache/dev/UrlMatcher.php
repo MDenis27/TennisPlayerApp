@@ -14,7 +14,7 @@ return [
         '/_profiler/phpinfo' => [[['_route' => '_profiler_phpinfo', '_controller' => 'web_profiler.controller.profiler::phpinfoAction'], null, null, null, false, false, null]],
         '/_profiler/open' => [[['_route' => '_profiler_open_file', '_controller' => 'web_profiler.controller.profiler::openAction'], null, null, null, false, false, null]],
         '/api/addperson' => [[['_route' => 'add_personapi', '_controller' => 'App\\Controller\\APIAddPersonController::new'], null, null, null, false, false, null]],
-        '/api/addracket' => [[['_route' => 'add_racketapi', '_controller' => 'App\\Controller\\APIAddRacketController::new'], null, null, null, false, false, null]],
+        '/api/addracket' => [[['_route' => 'add_racketapi', '_controller' => 'App\\Controller\\APIAddRacketController::index'], null, ['POST' => 0], null, false, false, null]],
         '/api/addstring' => [[['_route' => 'api_create_string', '_controller' => 'App\\Controller\\APIAddStringController::index'], null, ['POST' => 0], null, false, false, null]],
         '/api' => [[['_route' => 'homeapi', '_controller' => 'App\\Controller\\APIHomeController::index'], null, ['GET' => 0], null, false, false, null]],
         '/api/login' => [[['_route' => 'loginapi', '_controller' => 'App\\Controller\\APILoginController::index'], null, null, null, false, false, null]],

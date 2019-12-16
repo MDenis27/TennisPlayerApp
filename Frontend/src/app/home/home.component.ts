@@ -38,6 +38,8 @@ export class HomeComponent implements OnInit,AfterViewInit {
               public dialog: MatDialog) { }
 
   ngOnInit() {
+    this.selected = 'None';
+    this.Customers = [];
     this.api.getHomeJson().subscribe(urldata => {
       this.data = JSON.parse(JSON.stringify(urldata));
 
@@ -101,14 +103,15 @@ export class HomeComponent implements OnInit,AfterViewInit {
     });
   }
 
-  openDialogRacket(): void {
+  openDialogRacket(idCustomer: number): void {
     const dialogRef = this.dialog.open(HomeDialogRacket, {
       width: '60%',
-      data: {customer: this.customer}
+      data: {number: idCustomer}
     });
 
     dialogRef.afterClosed().subscribe(result => {
       console.log('The dialog was closed');
+      this.ngOnInit();
     });
   }
 }
@@ -133,28 +136,24 @@ export class DialogOverviewExampleDialog {
   }
 
   onSaveString(form: NgForm) {
-      const string : TennisString = {
-        id: 0,
-        brand: form.value.brand,
-        model: form.value.model,
-        gauge: form.value.gauge,
-        longTension: form.value.longTension,
-        crossTension: form.value.crossTension,
-        date: new Date(Date.now()),
-        idRacket: this.idracket["number"]
-      };
+    const string : TennisString = {
+      id: 0,
+      brand: form.value.brand,
+      model: form.value.model,
+      gauge: form.value.gauge,
+      longTension: form.value.longTension,
+      crossTension: form.value.crossTension,
+      date: new Date(Date.now()),
+      idRacket: this.idracket["number"]
+    };
 
     this.api.createNewString(string).subscribe(urldata=>{
       if(urldata['result']){
-        this.router.navigate(['api/addstring']).then(r => console.log(r))
+        this.dialogRef.close();
       }
     },error =>{
       this.error = error
     } );
-
-    this.dialogRef.close()
-
-
   }
 }
 
@@ -165,9 +164,13 @@ export class DialogOverviewExampleDialog {
 })
 export class HomeDialogRacket {
 
+  public error: any;
+
   constructor(
       public dialogRef: MatDialogRef<HomeDialogRacket>,
-      @Inject(MAT_DIALOG_DATA) public custom: Customer) {}
+      private api: PersonService,
+      private router : Router,
+      @Inject(MAT_DIALOG_DATA) public idCustomer: number) {}
 
   onNoClick(): void {
     this.dialogRef.close();
@@ -179,8 +182,16 @@ export class HomeDialogRacket {
       brand: form.value.brand,
       model: form.value.model,
       stringed: true,
-      idPerson: this.custom.id,
+      idPerson: this.idCustomer["number"],
       idString: []
-    }
+    };
+    
+    this.api.createNewRacket(racket).subscribe(urldata=>{
+      if(urldata['result']){
+        this.dialogRef.close();
+      }
+    },error =>{
+      this.error = error
+    } );
   }
 }
