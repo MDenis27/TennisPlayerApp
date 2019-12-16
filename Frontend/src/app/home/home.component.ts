@@ -185,7 +185,7 @@ export class HomeDialogRacket {
       idPerson: this.idCustomer["number"],
       idString: []
     };
-    
+
     this.api.createNewRacket(racket).subscribe(urldata=>{
       if(urldata['result']){
         this.dialogRef.close();
