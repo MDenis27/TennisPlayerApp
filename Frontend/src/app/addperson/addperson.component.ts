@@ -13,6 +13,8 @@ import {Customer, Racket, TennisString} from '../interface/interface.component';
 })
 export class AddpersonComponent implements OnInit {
 
+  public error: any;
+
   constructor(private api: PersonService,
               private router : Router,
               public dialog: MatDialog) { }
@@ -30,6 +32,14 @@ export class AddpersonComponent implements OnInit {
       note: form.value.note,
       idRacket: []
     };
+
+    this.api.createNewCustomer(customer).subscribe(urldata=>{
+      if(urldata['result']){
+        this.router.navigate(['home']);
+      }
+    },error =>{
+      this.error = error
+    } );
   }
 
   onNoClick() {
