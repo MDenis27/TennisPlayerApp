@@ -29,6 +29,8 @@ export class HomeComponent implements OnInit,AfterViewInit {
   selected: 'None';
   hasChange: boolean = false;
   customer: Customer;
+  racket: Racket;
+  string: TennisString;
 
   @ViewChild('Select',{static:false}) select : MatSelect;
 
@@ -53,8 +55,7 @@ export class HomeComponent implements OnInit,AfterViewInit {
               longTension: tempString["longTension"],
               crossTension: tempString["crossTension"],
               date: tempString["date"],
-              idRacket: tempRacket["id"],
-              idPerson: tempData["id"]
+              idRacket: tempRacket["id"]
             })
           }
           this.Rackets.push({
@@ -88,14 +89,15 @@ export class HomeComponent implements OnInit,AfterViewInit {
     })
   }
 
-  openDialog(tennisRacket: Racket): void {
+  openDialog(idRacket: number): void {
     const dialogRef = this.dialog.open(DialogOverviewExampleDialog, {
       width: '60%',
-      data: {customer: this.customer, racket: tennisRacket}
+      data: {number: idRacket}
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed');
+      console.log("close");
+      this.ngOnInit();
     });
   }
 
@@ -114,7 +116,7 @@ export class HomeComponent implements OnInit,AfterViewInit {
 @Component({
   selector: 'app-home-dialog',
   templateUrl: 'home.component.dialog.html',
-  styleUrls: ['./home.component.css']
+  styleUrls: ['./home.component.css'],
 })
 export class DialogOverviewExampleDialog {
 
@@ -124,8 +126,7 @@ export class DialogOverviewExampleDialog {
       public dialogRef: MatDialogRef<DialogOverviewExampleDialog>,
       private api: PersonService,
       private router : Router,
-      @Inject(MAT_DIALOG_DATA) public custom: Customer,
-      @Inject(MAT_DIALOG_DATA) public racket: Racket) {}
+      @Inject(MAT_DIALOG_DATA) public idracket: number) {}
 
   onNoClick(): void {
     this.dialogRef.close();
@@ -140,12 +141,12 @@ export class DialogOverviewExampleDialog {
         longTension: form.value.longTension,
         crossTension: form.value.crossTension,
         date: new Date(Date.now()),
-        idRacket: this.racket.id,
-        idPerson: this.custom.id
+        idRacket: this.idracket["number"]
       };
+
     this.api.createNewString(string).subscribe(urldata=>{
       if(urldata['result']){
-        this.router.navigate(['api/addstring'])
+        this.router.navigate(['api/addstring']).then(r => console.log(r))
       }
     },error =>{
       this.error = error

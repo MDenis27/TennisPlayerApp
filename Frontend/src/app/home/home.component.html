@@ -21,6 +21,8 @@
             Phone: {{customer.phone}} - Mail: {{customer.mail}}
         </mat-card-subtitle>
     </mat-card-header>
+
+
     <mat-card-content *ngFor="let racket of customer.idRacket">
         <mat-card class="racketCard">
             <mat-card-header>
@@ -52,11 +54,13 @@
                 </mat-card>
             </mat-card-content>
             <mat-card-actions>
-                <button mat-raised-button (click)="openDialog(racket)">Add
+                <button mat-raised-button (click)="openDialog(racket.id)">Add
                     String</button>
             </mat-card-actions>
         </mat-card>
     </mat-card-content>
+
+
     <mat-card-actions>
         <button mat-raised-button (click)="openDialogRacket()">Add
             Racket</button>

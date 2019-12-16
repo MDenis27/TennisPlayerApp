@@ -18,7 +18,7 @@ export class PersonService {
   }
 
   createNewString(newString : TennisString){
-    let url = "https://127.0.0.1:8000/api/addstring";
+    let url = "http://127.0.0.1:8000/api/addstring";
     return this.http.post(url,newString).pipe(catchError(this.handelError));
   }
 

@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Entity\Racket;
 use App\Entity\TennisString;
 use App\Form\TennisStringType;
+use Exception;
 use DateTime;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
@@ -23,14 +24,25 @@ class APIAddStringController extends AbstractController
     public function index(Request $request)
     {
         $string = new TennisString();
+        $racket = new Racket();
 
         $data = json_decode($request->getContent(), true);
 
         $em = $this->getDoctrine()->getManager();
         $date = new DateTime();
 
+        if (isset($data["idRacket"])){
+            $idRacket = $data["idRacket"];
+            $racket = $em->getRepository('App:Racket')->find($idRacket);
+        }
+
         $string->setDate(new DateTime($date->format("Y/m/d")));
-        $string->setBrand($data["Brand"]);
+        $string->setBrand($data["brand"]);
+        $string->setModel($data["model"]);
+        $string->setGauge($data["gauge"]);
+        $string->setCrossTension($data["crossTension"]);
+        $string->setLongTension($data["longTension"]);
+        $string->setIdRacket($racket);
 
         try
         {
@@ -38,7 +50,9 @@ class APIAddStringController extends AbstractController
                 throw new Exception("This string already exist");
             }
             $em->persist($string);
+            echo("persist");
             $em->flush();
+            echo("flush");
             return new JsonResponse(['result' => true,'session' => $string], 200);
         }
         catch(Exception $e)
@@ -48,5 +62,10 @@ class APIAddStringController extends AbstractController
 
         return new JsonResponse(['error' => $error], 400);
 
+    }
+
+    private function checkIfExist(TennisString $string)
+    {
+        return false;
     }
 }
