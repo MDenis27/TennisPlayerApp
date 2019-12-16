@@ -5,6 +5,8 @@ namespace App\Controller;
 use App\Entity\Person;
 use App\Form\PersonType;
 use App\Form\RegistrationFormType;
+use Exception;
+use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
@@ -16,53 +18,48 @@ use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 class APIAddPersonController extends AbstractController
 {
     /**
-     * @Route("/api/addperson", name="add_personapi")
+     * @Route("/api/addperson", name="add_personapi", methods={"POST"})
      * @param Request $request
-     * @return RedirectResponse|Response
+     * @return Response
+     * @throws Exception
      */
-    public function new(Request $request)
+    public function index(Request $request)
     {
         $person = new Person();
-        $personb = new Person();
-        $form = $this->createForm(PersonType::class, $person);
 
-        $form->handleRequest($request);
+        $data = json_decode($request->getContent(), true);
+
         $em = $this->getDoctrine()->getManager();
 
-        if (isset($_GET['idpers'])){
-            $idPerson = $_GET['idpers'];
-            $personb = $em->getRepository('App:Person')->find($idPerson);
+
+        $person->setName($data["name"]);
+        $person->setFirstname($data["firstname"]);
+        $person->setPhone($data["phone"]);
+        $person->setMail($data["mail"]);
+        $person->setNote($data["note"]);
+
+        try
+        {
+            if($this->checkIfExist($person)){
+                throw new Exception("This person already exist");
+            }
+            $em->persist($person);
+            $em->flush();
+            return new JsonResponse(['result' => true,'customer' => $person],
+                200);
+        }
+        catch(Exception $e)
+        {
+            $error = $e->getMessage();
         }
 
-        if ($form->isSubmitted() && $form->isValid()) {
-            /**
-            * @var $person Person
-             */
-            $form->getData();
-            if (isset($_GET['idpers'])){
-                $idPerson = $_GET['idpers'];
-                $personb = $em->getRepository('App:Person')->find($idPerson);
-                $personb->setFirstname($form->get('firstname')->getData());
-                $personb->setMail($form->get('mail')->getData());
-                $personb->setName($form->get('name')->getData());
-                $personb->setNote($form->get('note')->getData());
-                $personb->setPhone($form->get('phone')->getData());
-                $em->persist($personb);
-                $em->flush();
-            }
-            else{
-                $em->persist($person);
-                $em->flush();
-            }
+        return new JsonResponse(['error' => $error], 400);
 
-            return $this->redirectToRoute('homeapi');
-        }
+    }
 
-        return $this->render('add_person/index.html.twig', [
-            'personForm' => $form->createView(),
-            'person' => $personb,
-            ]);
-
+    private function checkIfExist(Person $person)
+    {
+        return false;
     }
 
 

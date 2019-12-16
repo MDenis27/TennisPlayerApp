@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <div class="div-content">
-    <h2>Adding a new string!</h2>
+    <h2>Add a new customer!</h2>
     <form (submit)="onSavePerson(savePersonForm)"
           #savePersonForm="ngForm" class="">
         <mat-form-field>
@@ -11,10 +11,10 @@
         <br/>
 
         <mat-form-field>
-            <input matInput name="firstName" ngModel placeholder="First name"
-                   #firstNameInput="ngModel" required>
-            <mat-error *ngIf="firstNameInput.invalid">please enter
-                first name</mat-error>
+            <input matInput name="firstname" ngModel placeholder="Firstname"
+                   #firstnameInput="ngModel" required>
+            <mat-error *ngIf="firstnameInput.invalid">please enter
+                name</mat-error>
         </mat-form-field>
         <br/>
 

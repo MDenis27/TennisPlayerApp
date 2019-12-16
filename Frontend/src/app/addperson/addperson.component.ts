@@ -31,7 +31,11 @@ export class AddpersonComponent implements OnInit {
       note: form.value.note,
       idRacket: []
     };
-
+    console.log(form.value.name);
+    console.log(form.value.firstname);
+    console.log(form.value.phone);
+    console.log(form.value.mail);
+    console.log(form.value.note);
     this.api.createNewCustomer(customer).subscribe(urldata=>{
       if(urldata['result']){
         this.router.navigate(['home']);

@@ -15,7 +15,7 @@ return [
     '_profiler_router' => [['token'], ['_controller' => 'web_profiler.controller.router::panelAction'], [], [['text', '/router'], ['variable', '/', '[^/]++', 'token', true], ['text', '/_profiler']], [], []],
     '_profiler_exception' => [['token'], ['_controller' => 'web_profiler.controller.exception::showAction'], [], [['text', '/exception'], ['variable', '/', '[^/]++', 'token', true], ['text', '/_profiler']], [], []],
     '_profiler_exception_css' => [['token'], ['_controller' => 'web_profiler.controller.exception::cssAction'], [], [['text', '/exception.css'], ['variable', '/', '[^/]++', 'token', true], ['text', '/_profiler']], [], []],
-    'add_personapi' => [[], ['_controller' => 'App\\Controller\\APIAddPersonController::new'], [], [['text', '/api/addperson']], [], []],
+    'add_personapi' => [[], ['_controller' => 'App\\Controller\\APIAddPersonController::index'], [], [['text', '/api/addperson']], [], []],
     'add_racketapi' => [[], ['_controller' => 'App\\Controller\\APIAddRacketController::index'], [], [['text', '/api/addracket']], [], []],
     'api_create_string' => [[], ['_controller' => 'App\\Controller\\APIAddStringController::index'], [], [['text', '/api/addstring']], [], []],
     'homeapi' => [[], ['_controller' => 'App\\Controller\\APIHomeController::index'], [], [['text', '/api']], [], []],
