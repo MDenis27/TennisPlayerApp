@@ -11,6 +11,7 @@ import {Customer, Racket, TennisString} from '../interface/interface.component';
 import {MatSelect} from "@angular/material/select";
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
 import {NgForm} from "@angular/forms";
+import {Router} from "@angular/router";
 
 
 @Component({
@@ -83,19 +84,18 @@ export class HomeComponent implements OnInit,AfterViewInit {
   ngAfterViewInit(): void {
     this.select.valueChange.subscribe(data=>{
       this.hasChange = true;
-      this.customer = this.Customers[data-1];
+      this.customer = data;
     })
   }
 
-  openDialog(): void {
+  openDialog(tennisRacket: Racket): void {
     const dialogRef = this.dialog.open(DialogOverviewExampleDialog, {
       width: '60%',
-      data: {customer: this.customer}
+      data: {customer: this.customer, racket: tennisRacket}
     });
 
     dialogRef.afterClosed().subscribe(result => {
       console.log('The dialog was closed');
-      this.customer = result;
     });
   }
 
@@ -107,7 +107,6 @@ export class HomeComponent implements OnInit,AfterViewInit {
 
     dialogRef.afterClosed().subscribe(result => {
       console.log('The dialog was closed');
-      this.customer = result;
     });
   }
 }
@@ -119,8 +118,12 @@ export class HomeComponent implements OnInit,AfterViewInit {
 })
 export class DialogOverviewExampleDialog {
 
+  public error: any;
+
   constructor(
       public dialogRef: MatDialogRef<DialogOverviewExampleDialog>,
+      private api: PersonService,
+      private router : Router,
       @Inject(MAT_DIALOG_DATA) public custom: Customer,
       @Inject(MAT_DIALOG_DATA) public racket: Racket) {}
 
@@ -137,9 +140,20 @@ export class DialogOverviewExampleDialog {
         longTension: form.value.longTension,
         crossTension: form.value.crossTension,
         date: new Date(Date.now()),
-        idRacket: null,
+        idRacket: this.racket.id,
         idPerson: this.custom.id
+      };
+    this.api.createNewString(string).subscribe(urldata=>{
+      if(urldata['result']){
+        this.router.navigate(['api/addstring'])
       }
+    },error =>{
+      this.error = error
+    } );
+
+    this.dialogRef.close()
+
+
   }
 }
 

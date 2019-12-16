@@ -5,7 +5,7 @@
                      #Select>
             <mat-option> None </mat-option>
             <mat-option *ngFor="let cust of Customers"
-                        [value]="cust.id">
+                        [value]="cust">
                 {{cust.id}} {{cust.name}} {{cust.firstname}}
             </mat-option>
         </mat-select>
@@ -52,7 +52,8 @@
                 </mat-card>
             </mat-card-content>
             <mat-card-actions>
-                <button mat-raised-button (click)="openDialog()">Add String</button>
+                <button mat-raised-button (click)="openDialog(racket)">Add
+                    String</button>
             </mat-card-actions>
         </mat-card>
     </mat-card-content>

@@ -2,6 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="309e1b78-62a4-4845-b050-57e2bc4dda32" name="Default Changelist" comment="Commit">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/src/Controller/APIAddStringController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/Controller/APIAddStringController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/var/cache/dev/pools/8YnY4n60DP/H/4/oENEWz6bgXFPpgzsgaTA" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/var/cache/dev/pools/8YnY4n60DP/H/4/oENEWz6bgXFPpgzsgaTA" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/var/cache/dev/pools/8YnY4n60DP/L/U/Ji2wOmjjYGjnd07bvE+Q" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/var/cache/dev/pools/8YnY4n60DP/L/U/Ji2wOmjjYGjnd07bvE+Q" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/var/cache/dev/profiler/index.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/var/cache/dev/profiler/index.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/var/log/dev.log" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/var/log/dev.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/src/app/home/home.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/src/app/home/home.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Frontend/src/app/home/home.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/src/app/home/home.component.ts" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -225,7 +232,8 @@
       <workItem from="1575561339180" duration="3782000" />
       <workItem from="1575713333665" duration="2254000" />
       <workItem from="1575727073093" duration="11000" />
-      <workItem from="1576401809324" duration="2093000" />
+      <workItem from="1576401809324" duration="2317000" />
+      <workItem from="1576480052089" duration="3735000" />
     </task>
     <task id="LOCAL-00001" summary="Commit">
       <created>1574844215213</created>
