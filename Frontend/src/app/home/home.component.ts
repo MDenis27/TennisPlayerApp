@@ -100,6 +100,7 @@ export class HomeComponent implements OnInit,AfterViewInit {
 
     dialogRef.afterClosed().subscribe(result => {
       console.log("close");
+      this.router.navigate(['home']);
       this.ngOnInit();
     });
   }
@@ -112,6 +113,7 @@ export class HomeComponent implements OnInit,AfterViewInit {
 
     dialogRef.afterClosed().subscribe(result => {
       console.log('The dialog was closed');
+      this.router.navigate(['home']);
       this.ngOnInit();
     });
   }

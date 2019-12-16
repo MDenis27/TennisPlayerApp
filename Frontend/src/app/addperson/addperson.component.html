@@ -1,1 +1,42 @@
-<p>addperson works!</p>
+<!DOCTYPE html>
+<div class="div-content">
+    <h2>Adding a new string!</h2>
+    <form (submit)="onSavePerson(savePersonForm)"
+          #savePersonForm="ngForm" class="">
+        <mat-form-field>
+            <input matInput name="name" ngModel placeholder="Name"
+                   #nameInput="ngModel" required>
+            <mat-error *ngIf="nameInput.invalid">please enter name</mat-error>
+        </mat-form-field>
+        <br/>
+
+        <mat-form-field>
+            <input matInput name="firstName" ngModel placeholder="First name"
+                   #firstNameInput="ngModel" required>
+            <mat-error *ngIf="firstNameInput.invalid">please enter
+                first name</mat-error>
+        </mat-form-field>
+        <br/>
+
+        <mat-form-field>
+            <input matInput name="phone" ngModel placeholder="Phone number"
+                   #phoneInput="ngModel">
+        </mat-form-field>
+        <br/>
+
+        <mat-form-field>
+            <input matInput name="mail" ngModel placeholder="mail"
+                   #mailInput="ngModel">
+        </mat-form-field>
+        <br/>
+
+        <mat-form-field>
+            <textarea matInput name="note" ngModel placeholder="note"
+                      #noteInput="ngModel"></textarea>
+        </mat-form-field>
+        <br/>
+
+        <button mat-button (click)="onNoClick()">Cancel</button>
+        <button mat-raised-button color="primary" type="submit">Save</button>
+    </form>
+</div>
