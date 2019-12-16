@@ -51,7 +51,8 @@ class APIAddStringController extends AbstractController
             }
             $em->persist($string);
             $em->flush();
-            return new JsonResponse(['result' => true,'session' => $string], 200);
+            return new JsonResponse(['result' => true,'string' => $string],
+                200);
         }
         catch(Exception $e)
         {

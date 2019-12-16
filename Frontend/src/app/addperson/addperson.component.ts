@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {PersonService} from "../person.service";
 import {Router} from "@angular/router";
-import {MatDialog} from "@angular/material/dialog";
 import {NgForm} from "@angular/forms";
-import {Customer, Racket, TennisString} from '../interface/interface.component';
+import {Customer} from '../interface/interface.component';
 
 
 @Component({

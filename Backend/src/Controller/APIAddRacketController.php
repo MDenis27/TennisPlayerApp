@@ -52,7 +52,8 @@ class APIAddRacketController extends AbstractController
             }
             $em->persist($racket);
             $em->flush();
-            return new JsonResponse(['result' => true,'session' => $racket], 200);
+            return new JsonResponse(['result' => true,'racket' => $racket],
+                200);
         }
         catch(Exception $e)
         {

@@ -3,17 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="309e1b78-62a4-4845-b050-57e2bc4dda32" name="Default Changelist" comment="Commit">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/src/Controller/APIAddPersonController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/Controller/APIAddPersonController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/var/cache/dev/UrlGenerator.php" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/var/cache/dev/UrlGenerator.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/var/cache/dev/UrlMatcher.php" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/var/cache/dev/UrlMatcher.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/var/cache/dev/pools/8YnY4n60DP/T/U/ulcheYEZ7+3qjJB86V6w" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/var/cache/dev/pools/8YnY4n60DP/T/U/ulcheYEZ7+3qjJB86V6w" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/src/Controller/APIAddRacketController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/Controller/APIAddRacketController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/src/Controller/APIAddStringController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/Controller/APIAddStringController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Backend/var/cache/dev/profiler/index.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/var/cache/dev/profiler/index.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/var/cache/dev/srcApp_KernelDevDebugContainer.php" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/var/cache/dev/srcApp_KernelDevDebugContainer.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/var/cache/dev/srcApp_KernelDevDebugContainer.php.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/var/cache/dev/srcApp_KernelDevDebugContainer.php.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/var/cache/dev/srcApp_KernelDevDebugContainer.xml.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/var/cache/dev/srcApp_KernelDevDebugContainer.xml.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Backend/var/log/dev.log" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/var/log/dev.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/src/app/addperson/addperson.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/src/app/addperson/addperson.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Frontend/src/app/addperson/addperson.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/src/app/addperson/addperson.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/src/app/home/home.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/src/app/home/home.component.ts" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
