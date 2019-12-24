@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {PersonService} from "../person.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-person',
@@ -7,9 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PersonComponent implements OnInit {
 
-  constructor() { }
+  public person: JSON[] = [];
+
+  constructor(private api: PersonService,
+              private router : Router,
+              private  id: number) { }
 
   ngOnInit() {
+    this.api.GetPerson(this.id).subscribe(urldata => {
+      this.person = JSON.parse(JSON.stringify(urldata))});
+    console.log(this.person);
   }
 
 }

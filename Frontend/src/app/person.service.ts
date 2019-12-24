@@ -10,25 +10,32 @@ import {Racket, TennisString, Customer} from "./interface/interface.component";
 })
 export class PersonService {
 
+  public ip = "http://127.0.0.1:8000";
+
   constructor(private http: HttpClient, private router: Router) { }
 
   getHomeJson() {
-    return this.http.get('http://127.0.0.1:8000/api').pipe(
+    return this.http.get(this.ip + '/api').pipe(
+        catchError(this.handelError));
+  }
+
+  GetPerson(id: number) {
+    return this.http.get(this.ip + '/api/person/' + id.toString()).pipe(
         catchError(this.handelError));
   }
 
   createNewString(newString : TennisString){
-    let url = "http://127.0.0.1:8000/api/addstring";
+    let url = this.ip + "/api/addstring";
     return this.http.post(url,newString).pipe(catchError(this.handelError));
   }
 
   createNewRacket(newRacket : Racket){
-    let url = "http://127.0.0.1:8000/api/addracket";
+    let url = this.ip + "/api/addracket";
     return this.http.post(url, newRacket).pipe(catchError(this.handelError));
   }
 
   createNewCustomer(customer : Customer){
-    let url = "http://127.0.0.1:8000/api/addperson";
+    let url = this.ip + "/api/addperson";
     return this.http.post(url, customer).pipe(catchError(this.handelError));
   }
 
@@ -39,4 +46,5 @@ export class PersonService {
       return throwError(err.message);
     }
   }
+
 }

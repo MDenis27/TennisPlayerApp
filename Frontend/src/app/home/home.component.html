@@ -20,6 +20,10 @@
         <mat-card-subtitle class="subtitleWhite">
             Phone: {{customer.phone}} - Mail: {{customer.mail}}
         </mat-card-subtitle>
+        <button mat-raised-button (click)="UpdateCustomer(customer.id)"
+                class="customerUpdate">
+            Modify
+        </button>
     </mat-card-header>
 
 

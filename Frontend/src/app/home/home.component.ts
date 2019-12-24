@@ -116,6 +116,10 @@ export class HomeComponent implements OnInit,AfterViewInit {
       this.ngOnInit();
     });
   }
+
+  UpdateCustomer(id: number) {
+    
+  }
 }
 
 @Component({

@@ -24,6 +24,13 @@ mat-dialog-content {
     color: white;
 }
 
+.customerUpdate {
+    width: 25%;
+    height: 50px;
+    position: absolute;
+    right: 5%;
+}
+
 .racketCard {
     max-width: 100%;
 }
