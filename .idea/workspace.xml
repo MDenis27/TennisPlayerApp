@@ -6,7 +6,6 @@
       <change beforePath="$PROJECT_DIR$/Backend/var/cache/dev/profiler/index.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/var/cache/dev/profiler/index.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Backend/var/log/dev.log" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/var/log/dev.log" afterDir="false" />
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -144,6 +143,11 @@
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="1" id="Add" />
   </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
@@ -169,18 +173,6 @@
       <recent name="$PROJECT_DIR$/Frontend/src/app/Interfaces" />
     </key>
   </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
-  </component>
   <component name="RunManager" selected="npm.Angular CLI Server">
     <configuration name="E2E Tests (AppTennisPlayer)" type="JavaScriptTestRunnerProtractor">
       <config-file value="$PROJECT_DIR$/Frontend/e2e/protractor.conf.js" />
@@ -203,6 +195,18 @@
       <envs />
       <method v="2" />
     </configuration>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -229,6 +233,10 @@
       <workItem from="1575727073093" duration="11000" />
       <workItem from="1576401809324" duration="2317000" />
       <workItem from="1576480052089" duration="10025000" />
+      <workItem from="1576592872195" duration="9000" />
+      <workItem from="1576752744727" duration="336000" />
+      <workItem from="1577114524030" duration="607000" />
+      <workItem from="1577115200694" duration="601000" />
     </task>
     <task id="LOCAL-00001" summary="Commit">
       <created>1574844215213</created>
