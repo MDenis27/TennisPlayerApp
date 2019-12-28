@@ -605,3 +605,12 @@ e0197a,::1,GET,http://localhost:8000/favicon.ico,1577539959,8f771c,200
 8f771c,::1,GET,http://localhost:8000/favicon.ico,1577539959,,404
 9d255d,::1,GET,http://localhost:8000/?customer=1,1577540310,,200
 dfbac8,127.0.0.1,GET,http://127.0.0.1:8000/api,1577546213,,200
+2d0745,::1,GET,http://localhost:8000/favicon.ico,1577547999,6ec59a,200
+6ec59a,::1,GET,http://localhost:8000/favicon.ico,1577547999,,404
+f8d2ef,127.0.0.1,GET,http://127.0.0.1:8000/api,1577549939,,200
+b9b9d2,127.0.0.1,GET,http://127.0.0.1:8000/api,1577549954,,200
+3bccbe,127.0.0.1,OPTIONS,http://127.0.0.1:8000/api/addracket,1577549993,,200
+76b549,127.0.0.1,GET,http://127.0.0.1:8000/api,1577549993,,200
+58cb84,127.0.0.1,POST,http://127.0.0.1:8000/api/addracket,1577549993,,200
+b73bd7,127.0.0.1,GET,http://127.0.0.1:8000/api,1577549993,,200
+4c7740,127.0.0.1,GET,http://127.0.0.1:8000/api,1577551158,,200
