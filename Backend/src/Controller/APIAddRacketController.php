@@ -77,6 +77,12 @@ class APIAddRacketController extends AbstractController
         {
             $em = $this->getDoctrine()->getManager();
             $racket = $em->getRepository('App:Racket')->find($id);
+            $strings = $racket->getIdString();
+            foreach ($strings as $idst){
+                $string = $em->getRepository('App:TennisString')->find($idst);
+                $em->remove($string);
+            }
+            $em->flush();
             $em->remove($racket);
             $em->flush();
             return new JsonResponse(['result' => true],
