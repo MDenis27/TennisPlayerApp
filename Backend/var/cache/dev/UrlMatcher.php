@@ -46,7 +46,8 @@ return [
                         .'|racket/delete/([^/]++)(*:205)'
                         .'|string/delete/([^/]++)(*:235)'
                     .')'
-                    .'|delete/([^/]++)(*:259)'
+                    .'|person/([^/]++)(*:259)'
+                    .'|delete/([^/]++)(*:282)'
                 .')'
             .')/?$}sDu',
     ],
@@ -60,8 +61,9 @@ return [
         159 => [[['_route' => '_profiler', '_controller' => 'web_profiler.controller.profiler::panelAction'], ['token'], null, null, false, true, null]],
         205 => [[['_route' => 'racketDeleteapi', '_controller' => 'App\\Controller\\APIAddRacketController::deleteRacket'], ['id'], ['DELETE' => 0], null, false, true, null]],
         235 => [[['_route' => 'stringDeleteapi', '_controller' => 'App\\Controller\\APIAddStringController::deleteString'], ['id'], ['DELETE' => 0], null, false, true, null]],
-        259 => [
-            [['_route' => 'homePersonapi', '_controller' => 'App\\Controller\\APIHomeController::displayPerson'], ['id'], ['GET' => 0], null, false, true, null],
+        259 => [[['_route' => 'homePersonapi', '_controller' => 'App\\Controller\\APIHomeController::displayPerson'], ['id'], ['GET' => 0], null, false, true, null]],
+        282 => [
+            [['_route' => 'personDeleteapi', '_controller' => 'App\\Controller\\APIHomeController::deletePerson'], ['id'], ['DELETE' => 0], null, false, true, null],
             [null, null, null, null, false, false, 0],
         ],
     ],

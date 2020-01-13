@@ -53,7 +53,7 @@
                     </mat-card-content>
                     <mat-card-actions>
                         <button mat-raised-button
-                                (click)="DeleteString(string)">Delete
+                                (click)="DeleteString(string)">Delete String
                         </button>
                     </mat-card-actions>
                 </mat-card>
@@ -62,7 +62,7 @@
                 <button mat-raised-button (click)="openDialog(racket.id)">Add
                     String</button>
                 <button mat-raised-button (click)="DeleteRacket(racket)">
-                    Delete </button>
+                    Delete Racket</button>
             </mat-card-actions>
         </mat-card>
     </mat-card-content>
@@ -71,6 +71,8 @@
     <mat-card-actions>
         <button mat-raised-button (click)="openDialogRacket(customer.id)">Add
             Racket</button>
+        <button mat-raised-button (click)="DeleteCustomer(customer)">
+            Delete Customer</button>
     </mat-card-actions>
 </mat-card>
 </div>

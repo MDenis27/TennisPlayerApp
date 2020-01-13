@@ -41,7 +41,7 @@ class APIHomeController extends AbstractController
     }
 
     /**
-     * @Route("/api/delete/{id}", name="homePersonapi", methods="GET")
+     * @Route("/api/person/{id}", name="homePersonapi", methods="GET")
      * @param $id
      * @return JsonResponse
      */
@@ -61,6 +61,44 @@ class APIHomeController extends AbstractController
         $jsonContent = $serializer->serialize($person,'json');
         $response = new JsonResponse(); $response->setContent($jsonContent);
         return $response;
+    }
+
+    /**
+     * @Route("/api/delete/{id}", name="personDeleteapi", methods="DELETE")
+     * @param Request $request
+     * @param $id
+     * @return JsonResponse
+     */
+    public function deletePerson(Request $request, $id){
+
+        try
+        {
+            $em = $this->getDoctrine()->getManager();
+            $person = $em->getRepository('App:Person')->find($id);
+            $rackets = $person->getIdRacket();
+            foreach ($rackets as $idr){
+                $racket = $em->getRepository('App:Racket')->find($idr);
+                $strings = $racket->GetIdString();
+                foreach ($strings as $ids){
+                    $string = $em->getRepository('App:TennisString')->find
+                    ($ids);
+                    $em->remove($string);
+                }
+                $em->flush();
+                $em->remove($racket);
+            }
+            $em->flush();
+            $em->remove($person);
+            $em->flush();
+            return new JsonResponse(['result' => true],
+                200);
+        }
+        catch(Exception $e)
+        {
+            $error = $e->getMessage();
+        }
+
+        return new JsonResponse(['error' => $error], 400);
     }
 
 }

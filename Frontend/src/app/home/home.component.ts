@@ -145,6 +145,20 @@ export class HomeComponent implements OnInit,AfterViewInit {
       } )
     }
   }
+
+  DeleteCustomer(customer: Customer) {
+    if(confirm("Delete "+ customer.firstname + "?")){
+      this.api.deleteCustomer(customer.id).subscribe(urldata=>{
+        if(urldata['result']){
+          console.log("Deleted");
+          this.router.navigate(['home']);
+          this.ngOnInit();
+        }
+      },error =>{
+        this.error = error
+      } )
+    }
+  }
 }
 
 @Component({
