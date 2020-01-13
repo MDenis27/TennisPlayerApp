@@ -63,6 +63,32 @@ class APIAddStringController extends AbstractController
 
     }
 
+    /**
+     * @Route("/api/addstring/delete/{id}", name="stringDeleteapi",
+     *     methods="DELETE")
+     * @param Request $request
+     * @param $id
+     * @return JsonResponse
+     */
+    public function deleteString(Request $request, $id){
+
+        try
+        {
+            $em = $this->getDoctrine()->getManager();
+            $string = $em->getRepository('App:TennisString')->find($id);
+            $em->remove($string);
+            $em->flush();
+            return new JsonResponse(['result' => true],
+                200);
+        }
+        catch(Exception $e)
+        {
+            $error = $e->getMessage();
+        }
+
+        return new JsonResponse(['error' => $error], 400);
+    }
+
     private function checkIfExist(TennisString $string)
     {
         return false;

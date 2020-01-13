@@ -120,7 +120,7 @@ export class HomeComponent implements OnInit,AfterViewInit {
 
   DeleteString(string: TennisString) {
     if(confirm("Delete "+ string.brand + " " + string.model + "?")){
-      this.api.deletePerson(string.id).subscribe(urldata=>{
+      this.api.deleteString(string.id).subscribe(urldata=>{
         if(urldata['result']){
           console.log("Deleted");
           this.router.navigate(['home']);

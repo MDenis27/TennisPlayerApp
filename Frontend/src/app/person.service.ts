@@ -40,7 +40,7 @@ export class PersonService {
   }
 
   deleteString(id : number){
-    let url = this.ip + "/api/deleteString/" + id.toString();
+    let url = this.ip + "/api/addstring/delete/" + id.toString();
     return this.http.delete(url).pipe(catchError(this.handelError))
   }
 

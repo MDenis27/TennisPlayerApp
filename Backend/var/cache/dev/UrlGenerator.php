@@ -18,6 +18,7 @@ return [
     'add_personapi' => [[], ['_controller' => 'App\\Controller\\APIAddPersonController::index'], [], [['text', '/api/addperson']], [], []],
     'add_racketapi' => [[], ['_controller' => 'App\\Controller\\APIAddRacketController::index'], [], [['text', '/api/addracket']], [], []],
     'api_create_string' => [[], ['_controller' => 'App\\Controller\\APIAddStringController::index'], [], [['text', '/api/addstring']], [], []],
+    'stringDeleteapi' => [['id'], ['_controller' => 'App\\Controller\\APIAddStringController::deleteString'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/api/addstring/delete']], [], []],
     'homeapi' => [[], ['_controller' => 'App\\Controller\\APIHomeController::index'], [], [['text', '/api']], [], []],
     'homePersonapi' => [['id'], ['_controller' => 'App\\Controller\\APIHomeController::displayPerson'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/api/delete']], [], []],
     'loginapi' => [[], ['_controller' => 'App\\Controller\\APILoginController::index'], [], [['text', '/api/login']], [], []],
