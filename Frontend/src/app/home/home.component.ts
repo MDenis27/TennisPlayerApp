@@ -131,6 +131,20 @@ export class HomeComponent implements OnInit,AfterViewInit {
       } )
     }
   }
+
+  DeleteRacket(racket: Racket) {
+    if(confirm("Delete "+ racket.brand + " " + racket.model + "?")){
+      this.api.deleteRacket(racket.id).subscribe(urldata=>{
+        if(urldata['result']){
+          console.log("Deleted");
+          this.router.navigate(['home']);
+          this.ngOnInit();
+        }
+      },error =>{
+        this.error = error
+      } )
+    }
+  }
 }
 
 @Component({

@@ -45,7 +45,7 @@ export class PersonService {
   }
 
   deleteRacket(id : number){
-    let url = this.ip + "/api/addstring/delete/" + id.toString();
+    let url = this.ip + "/api/addracket/delete/" + id.toString();
     return this.http.delete(url).pipe(catchError(this.handelError))
   }
 

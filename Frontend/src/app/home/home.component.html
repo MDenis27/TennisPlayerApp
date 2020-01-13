@@ -50,17 +50,19 @@
                         {{string.crossTension}}</b><br/><br/>
                         Date: {{string.date["timestamp"]*1000 |
                         date: 'dd MMMM yyyy'}}
-                        <button mat-raised-button
-                                (click)="DeleteString(string)"
-                                class="customerUpdate">
-                            Delete
-                        </button>
                     </mat-card-content>
+                    <mat-card-actions>
+                        <button mat-raised-button
+                                (click)="DeleteString(string)">Delete
+                        </button>
+                    </mat-card-actions>
                 </mat-card>
             </mat-card-content>
             <mat-card-actions>
                 <button mat-raised-button (click)="openDialog(racket.id)">Add
                     String</button>
+                <button mat-raised-button (click)="DeleteRacket(racket)">
+                    Delete </button>
             </mat-card-actions>
         </mat-card>
     </mat-card-content>
