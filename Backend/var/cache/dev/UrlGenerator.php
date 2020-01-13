@@ -17,6 +17,7 @@ return [
     '_profiler_exception_css' => [['token'], ['_controller' => 'web_profiler.controller.exception::cssAction'], [], [['text', '/exception.css'], ['variable', '/', '[^/]++', 'token', true], ['text', '/_profiler']], [], []],
     'add_personapi' => [[], ['_controller' => 'App\\Controller\\APIAddPersonController::index'], [], [['text', '/api/addperson']], [], []],
     'add_racketapi' => [[], ['_controller' => 'App\\Controller\\APIAddRacketController::index'], [], [['text', '/api/addracket']], [], []],
+    'racketDeleteapi' => [['id'], ['_controller' => 'App\\Controller\\APIAddRacketController::deleteRacket'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/api/addracket/delete']], [], []],
     'api_create_string' => [[], ['_controller' => 'App\\Controller\\APIAddStringController::index'], [], [['text', '/api/addstring']], [], []],
     'stringDeleteapi' => [['id'], ['_controller' => 'App\\Controller\\APIAddStringController::deleteString'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/api/addstring/delete']], [], []],
     'homeapi' => [[], ['_controller' => 'App\\Controller\\APIHomeController::index'], [], [['text', '/api']], [], []],

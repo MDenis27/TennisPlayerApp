@@ -42,8 +42,11 @@ return [
                     .')'
                 .')'
                 .'|/api/(?'
-                    .'|addstring/delete/([^/]++)(*:202)'
-                    .'|delete/([^/]++)(*:225)'
+                    .'|add(?'
+                        .'|racket/delete/([^/]++)(*:205)'
+                        .'|string/delete/([^/]++)(*:235)'
+                    .')'
+                    .'|delete/([^/]++)(*:259)'
                 .')'
             .')/?$}sDu',
     ],
@@ -55,8 +58,9 @@ return [
         136 => [[['_route' => '_profiler_exception', '_controller' => 'web_profiler.controller.exception::showAction'], ['token'], null, null, false, false, null]],
         149 => [[['_route' => '_profiler_exception_css', '_controller' => 'web_profiler.controller.exception::cssAction'], ['token'], null, null, false, false, null]],
         159 => [[['_route' => '_profiler', '_controller' => 'web_profiler.controller.profiler::panelAction'], ['token'], null, null, false, true, null]],
-        202 => [[['_route' => 'stringDeleteapi', '_controller' => 'App\\Controller\\APIAddStringController::deleteString'], ['id'], ['DELETE' => 0], null, false, true, null]],
-        225 => [
+        205 => [[['_route' => 'racketDeleteapi', '_controller' => 'App\\Controller\\APIAddRacketController::deleteRacket'], ['id'], ['DELETE' => 0], null, false, true, null]],
+        235 => [[['_route' => 'stringDeleteapi', '_controller' => 'App\\Controller\\APIAddStringController::deleteString'], ['id'], ['DELETE' => 0], null, false, true, null]],
+        259 => [
             [['_route' => 'homePersonapi', '_controller' => 'App\\Controller\\APIHomeController::displayPerson'], ['id'], ['GET' => 0], null, false, true, null],
             [null, null, null, null, false, false, 0],
         ],

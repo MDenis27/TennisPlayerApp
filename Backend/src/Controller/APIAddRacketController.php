@@ -64,6 +64,32 @@ class APIAddRacketController extends AbstractController
 
     }
 
+    /**
+     * @Route("/api/addracket/delete/{id}", name="racketDeleteapi",
+     *     methods="DELETE")
+     * @param Request $request
+     * @param $id
+     * @return JsonResponse
+     */
+    public function deleteRacket(Request $request, $id){
+
+        try
+        {
+            $em = $this->getDoctrine()->getManager();
+            $racket = $em->getRepository('App:Racket')->find($id);
+            $em->remove($racket);
+            $em->flush();
+            return new JsonResponse(['result' => true],
+                200);
+        }
+        catch(Exception $e)
+        {
+            $error = $e->getMessage();
+        }
+
+        return new JsonResponse(['error' => $error], 400);
+    }
+
     private function checkIfExist(Racket $racket)
     {
         return false;
