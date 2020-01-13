@@ -30,6 +30,7 @@ export class HomeComponent implements OnInit,AfterViewInit {
   customer: Customer;
   racket: Racket;
   string: TennisString;
+  public error: any;
 
   @ViewChild('Select',{static:false}) select : MatSelect;
 
@@ -117,8 +118,18 @@ export class HomeComponent implements OnInit,AfterViewInit {
     });
   }
 
-  UpdateCustomer(id: number) {
-    
+  DeleteCustomer(customer: Customer) {
+    if(confirm("Delete "+ customer.firstname + "?")){
+      this.api.deletePerson(customer.id).subscribe(urldata=>{
+        if(urldata['result']){
+          console.log("Deleted");
+          this.router.navigate(['home']);
+          this.ngOnInit();
+        }
+      },error =>{
+        this.error = error
+      } )
+    }
   }
 }
 

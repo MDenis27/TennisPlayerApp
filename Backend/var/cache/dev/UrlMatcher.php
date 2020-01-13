@@ -41,7 +41,10 @@ return [
                         .'|(*:159)'
                     .')'
                 .')'
-                .'|/api/person/([^/]++)(*:189)'
+                .'|/api/(?'
+                    .'|person/([^/]++)(*:192)'
+                    .'|delete/([^/]++)(*:215)'
+                .')'
             .')/?$}sDu',
     ],
     [ // $dynamicRoutes
@@ -52,7 +55,8 @@ return [
         136 => [[['_route' => '_profiler_exception', '_controller' => 'web_profiler.controller.exception::showAction'], ['token'], null, null, false, false, null]],
         149 => [[['_route' => '_profiler_exception_css', '_controller' => 'web_profiler.controller.exception::cssAction'], ['token'], null, null, false, false, null]],
         159 => [[['_route' => '_profiler', '_controller' => 'web_profiler.controller.profiler::panelAction'], ['token'], null, null, false, true, null]],
-        189 => [
+        192 => [[['_route' => 'homeDeleteapi', '_controller' => 'App\\Controller\\APIHomeController::deletePerson'], ['id'], ['DELETE' => 0], null, false, true, null]],
+        215 => [
             [['_route' => 'homePersonapi', '_controller' => 'App\\Controller\\APIHomeController::displayPerson'], ['id'], ['GET' => 0], null, false, true, null],
             [null, null, null, null, false, false, 0],
         ],
