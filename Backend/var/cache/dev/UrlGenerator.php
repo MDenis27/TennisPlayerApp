@@ -19,7 +19,6 @@ return [
     'add_racketapi' => [[], ['_controller' => 'App\\Controller\\APIAddRacketController::index'], [], [['text', '/api/addracket']], [], []],
     'api_create_string' => [[], ['_controller' => 'App\\Controller\\APIAddStringController::index'], [], [['text', '/api/addstring']], [], []],
     'homeapi' => [[], ['_controller' => 'App\\Controller\\APIHomeController::index'], [], [['text', '/api']], [], []],
-    'homeDeleteapi' => [['id'], ['_controller' => 'App\\Controller\\APIHomeController::deletePerson'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/api/person']], [], []],
     'homePersonapi' => [['id'], ['_controller' => 'App\\Controller\\APIHomeController::displayPerson'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/api/delete']], [], []],
     'loginapi' => [[], ['_controller' => 'App\\Controller\\APILoginController::index'], [], [['text', '/api/login']], [], []],
     'add_person' => [[], ['_controller' => 'App\\Controller\\AddPersonController::new'], [], [['text', '/addperson']], [], []],

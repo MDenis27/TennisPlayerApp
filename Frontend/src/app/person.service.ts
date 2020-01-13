@@ -39,8 +39,8 @@ export class PersonService {
     return this.http.post(url, customer).pipe(catchError(this.handelError));
   }
 
-  deletePerson(id : number){
-    let url = this.ip + "/api/person" + id.toString();
+  deleteString(id : number){
+    let url = this.ip + "/api/deleteString/" + id.toString();
     return this.http.delete(url).pipe(catchError(this.handelError))
   }
 

@@ -10,13 +10,14 @@ return $getExpiry ? PHP_INT_MAX : Hydrator::hydrate(
     [
         'Symfony\\Component\\Routing\\Annotation\\Route' => [
             'path' => [
-                '/api/person/{id}',
+                '/api/person/{id?}',
             ],
             'name' => [
                 'homeDeleteapi',
             ],
             'methods' => [
                 [
+                    'OPTIONS',
                     'DELETE',
                 ],
             ],

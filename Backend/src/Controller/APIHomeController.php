@@ -41,31 +41,6 @@ class APIHomeController extends AbstractController
     }
 
     /**
-     * @Route("/api/person/{id}", name="homeDeleteapi", methods="DELETE")
-     * @param Request $request
-     * @param $id
-     * @return JsonResponse
-     */
-    public function deletePerson(Request $request, $id){
-
-        try
-        {
-            $em = $this->getDoctrine()->getManager();
-            $person = $em->getRepository('App:Person')->find($id);
-            $em->remove($person);
-            $em->flush();
-            return new JsonResponse(['result' => true],
-                200);
-        }
-        catch(Exception $e)
-        {
-            $error = $e->getMessage();
-        }
-
-        return new JsonResponse(['error' => $error], 400);
-    }
-
-    /**
      * @Route("/api/delete/{id}", name="homePersonapi", methods="GET")
      * @param $id
      * @return JsonResponse

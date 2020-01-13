@@ -20,10 +20,6 @@
         <mat-card-subtitle class="subtitleWhite">
             Phone: {{customer.phone}} - Mail: {{customer.mail}}
         </mat-card-subtitle>
-        <button mat-raised-button (click)="DeleteCustomer(customer)"
-                class="customerUpdate">
-            Delete
-        </button>
     </mat-card-header>
 
 
@@ -52,8 +48,13 @@
                     <mat-card-content>
                         Tension: <b>{{string.longTension}}/
                         {{string.crossTension}}</b><br/><br/>
-                        Last string: {{string.date["timestamp"]*1000 |
+                        Date: {{string.date["timestamp"]*1000 |
                         date: 'dd MMMM yyyy'}}
+                        <button mat-raised-button
+                                (click)="DeleteString(string)"
+                                class="customerUpdate">
+                            Delete
+                        </button>
                     </mat-card-content>
                 </mat-card>
             </mat-card-content>

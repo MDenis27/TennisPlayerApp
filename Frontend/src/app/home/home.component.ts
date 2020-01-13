@@ -118,9 +118,9 @@ export class HomeComponent implements OnInit,AfterViewInit {
     });
   }
 
-  DeleteCustomer(customer: Customer) {
-    if(confirm("Delete "+ customer.firstname + "?")){
-      this.api.deletePerson(customer.id).subscribe(urldata=>{
+  DeleteString(string: TennisString) {
+    if(confirm("Delete "+ string.brand + " " + string.model + "?")){
+      this.api.deletePerson(string.id).subscribe(urldata=>{
         if(urldata['result']){
           console.log("Deleted");
           this.router.navigate(['home']);
