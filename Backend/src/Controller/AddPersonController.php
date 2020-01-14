@@ -65,5 +65,4 @@ class AddPersonController extends AbstractController
 
     }
 
-
 }
