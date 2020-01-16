@@ -413,6 +413,6 @@ class __TwigTemplate_ab9e4ff879ba5deca74104c5fa6e9bbed96ac9d1d88c8d5ff3d603ca9fb
         </div>
     </div>
 </div>
-", "home/home.html.twig", "/Users/maximedenis/TennisPlayer/templates/home/home.html.twig");
+", "home/home.html.twig", "/Users/maximedenis/Documents/Projects/TennisPlayer/Backend/templates/home/home.html.twig");
     }
 }
