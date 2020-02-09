@@ -3,12 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="309e1b78-62a4-4845-b050-57e2bc4dda32" name="Default Changelist" comment="Commit">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/var/cache/dev/pools/8YnY4n60DP/8/S/6qD0etJhGfLdkSJPilRg" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/var/cache/dev/pools/8YnY4n60DP/8/S/6qD0etJhGfLdkSJPilRg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/var/cache/dev/pools/8YnY4n60DP/A/M/kt3SCoucBWLmNLdgh6tQ" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/var/cache/dev/pools/8YnY4n60DP/A/M/kt3SCoucBWLmNLdgh6tQ" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Backend/var/cache/dev/profiler/index.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/var/cache/dev/profiler/index.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/var/cache/dev/twig/07/070b708a633c71a85575d106519ad6db03fe9cf51092f5c40d71917b78d77cb9.php" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/var/cache/dev/twig/07/070b708a633c71a85575d106519ad6db03fe9cf51092f5c40d71917b78d77cb9.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Backend/var/log/dev.log" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/var/log/dev.log" afterDir="false" />
     </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -176,6 +174,18 @@
       <recent name="$PROJECT_DIR$/Frontend/src/app/Interfaces" />
     </key>
   </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
   <component name="RunManager" selected="npm.Angular CLI Server">
     <configuration name="E2E Tests (AppTennisPlayer)" type="JavaScriptTestRunnerProtractor">
       <config-file value="$PROJECT_DIR$/Frontend/e2e/protractor.conf.js" />
@@ -198,18 +208,6 @@
       <envs />
       <method v="2" />
     </configuration>
-  </component>
-  <component name="ServiceViewManager">
-    <option name="viewStates">
-      <list>
-        <serviceView>
-          <treeState>
-            <expand />
-            <select />
-          </treeState>
-        </serviceView>
-      </list>
-    </option>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -245,6 +243,8 @@
       <workItem from="1578911316982" duration="188000" />
       <workItem from="1578911514742" duration="5165000" />
       <workItem from="1578993566520" duration="1362000" />
+      <workItem from="1581180373161" duration="406000" />
+      <workItem from="1581236887861" duration="271000" />
     </task>
     <task id="LOCAL-00001" summary="Commit">
       <created>1574844215213</created>
